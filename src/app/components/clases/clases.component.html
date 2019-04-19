@@ -1,0 +1,19 @@
+<div class="alert mt-3" [ngClass]="alerta">
+  Angular JS
+</div>
+<button class="btn btn-info mr-2" (click)="alerta = 'alert-info'">Info</button>
+<button class="btn btn-success" (click)="alerta = 'alert-success'">Success</button>
+
+<h3 class="mt-3" [ngClass]="{ 'text-danger': propiedades.danger, 'text-info': !propiedades.danger  }">
+  JavaScript
+</h3>
+<button class="btn" (click)="propiedades.danger = !propiedades.danger" [ngClass]="{ 'btn-danger': propiedades.danger, 'btn-info': !propiedades.danger }">
+  Change
+</button>
+
+<h3 class="mt-3">Proceso Asincrono</h3>
+<button class="btn btn-primary" (click)="ejecutar()" [disabled]="loading">
+  <i class="fa" [ngClass]="{ 'fa-save': !loading, 'fa-sync fa-spin': loading }"></i>
+  <span *ngIf="!loading"> Guardar cambios</span>
+  <span *ngIf="loading"> Espere por favor</span>
+</button>
